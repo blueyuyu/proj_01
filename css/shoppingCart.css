@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* .bigbox{
+	margin: 0 auto;
+}   这段代码废掉了啊，效果出不来，到时候麻烦看看
+ */
+
+a{
+	text-decoration: none;
+	color: #666;
+}
+
+tbody tr:hover{
+	background-color: #eee;
+}
+
+/*******对所有元素清除浮动试试 *********/
+.clearfix::before,
+.clearfix::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.clearfix{
+	*zoom: 1;
+}
+
+/******购物车这一块，样式浮动特别厉害！！！！重新看过才行  *********/
+
+.num{
+	width: 20px;
+}
+
+table,
+tr{
+	border-collapse: collapse;	
+	border: 2px dashed #CCCCCC;	
+}
+
+table{
+	width: 840px;
+	margin: 0 auto;
+}
+
+th,td{
+	/* padding: 14px 40px; */
+	text-align: center;
+}
+
+tbody p {
+  position: relative;
+  bottom: 6px;
+}
+
+/* tr{
+	height: 113px;
+}   排除该元素  来一次把*/
+/**** 加减框 ******/
+/* .num{
+	margin: 0 -6px;   设置负距离，达到的把两边框合在一起的条件（出现了大问题，里面数字改变会引起样式波动）
+	
+} */
+
+
+
+/***  还是没用 试试加宽度限制住 ****/
+/* .count{
+	box-size: border-box; 
+} */
+
+.count-c{
+	width: 92px; /*************/
+	height: 20px;
+}
+
+input[type= 'text']{
+	float: left;  /*****后来加的 ***/
+	width: 50px;
+	height: 16px;/****** 我不理解为什么不匹配？和 button 高度对不上 *********/
+	text-align: center;
+	border-right: 0;
+	outline: none;/**** 用处未知*****/
+}
+
+input[type= 'button']{
+	float: left; /*****后来加的 , 改动之后还是有问题***/
+	width: 20px;
+	height: 20px;
+	outline: none;
+	cursor: pointer;	
+}
+
+/****** 有没有办法能把 这个框固定住啊？？？ *******/
+
+.checking{
+	box-sizing: border-box;
+	width: 840px;
+	height: 50px;
+	padding: 10px;
+	margin: 10px auto;
+	border: 1px solid #CCCCCC;
+}
+
+.checking span{
+	color: red;
+}
+
+.check{
+	float: right;
+	box-sizing: border-box;
+	width: 80px;
+	height: 50px;
+	margin-top: -10px;   /*****  我这里是用的这个样式，但是可以用 child 选择器选择的方法！！！  *****/
+	margin-right: -10px;
+	padding: 10px;
+	background-color: #ff0000;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.checkShow{
+	float: right;
+	padding-right: 20px;
+}
+
+.deleteAll{
+	padding: 0  30px;
+}

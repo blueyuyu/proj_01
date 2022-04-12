@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>购物车</title>
+		<link href="css/shoppingCart.css" rel = "stylesheet">
+	</head>
+	<body>
+		<div class="bigbox">
+			<table>
+				<thead>
+					<tr>
+						<th><input type = "checkbox" name = "choose" class="all"> 全选</th>   <!-- 这个要单独class 为 all -->
+						<th>商品</th>
+						<th>单价</th>
+						<th>商品数量</th>
+						<th>小计</th>
+						<th>操作</th>
+					</tr>
+					
+				</thead>
+				
+				<tbody>
+				
+					<tr>
+						<td> <input type = "checkbox" name = "choose" class="checkbox"> </td>
+						<td>
+							<img src = "./img/01.jpg" alt = ""> 
+							<p>牛奶</p>
+						</td>
+						<td class="unitPrice"> 5￥ </td>
+						
+						<td  class="count"> 
+						<div class="count-c clearfix">
+							<input type = "button" value ="+" class = "add">
+							<input type = "text" value ="1" class = "num">  <!-- readonly 只可读 -->
+							<input type = "button" value ="-" class = "plus" disabled>
+						</div>
+						</td>
+						
+						<td class="total"> 5￥ </td>
+						<td><a href = "javascript:" id = ${i} > 删除 </a></td>
+					</tr>
+				
+					<tr>
+						<td> <input type = "checkbox" name = "choose" class="checkbox"> </td>
+						<td>
+							<img src = "./img/01.jpg" alt = ""> 
+							<p>牛奶</p>
+						</td>
+						<td class="unitPrice"> 5￥ </td>
+						
+						<td>
+						<div class="count-c clearfix">
+							<input type = "button" value ="+" class = "add">
+							<input type = "text" value ="1" class = "num">  <!-- readonly 只可读 -->
+							<input type = "button" value ="-" class = "plus" disabled>
+						</div>
+						</td>
+						
+						<td class="total"> 5￥ </td>
+						<td><a href = "javascript:" id = ${i} > 删除 </a></td>
+					</tr>
+					
+					<tr>
+						<td> <input type = "checkbox" name = "choose" class="checkbox"> </td>
+						<td>
+							<img src = "./img/01.jpg" alt = ""> 
+							<p>牛奶</p>
+						</td>
+						<td class="unitPrice"> 5￥ </td>
+						
+						<td>
+						<div class="count-c clearfix">
+							<input type = "button" value ="+" class = "add">
+							<input type = "text" value ="1" class = "num">  <!-- readonly 只可读 -->
+							<input type = "button" value ="-" class = "plus" disabled>
+						</div>
+						</td>
+						
+						<td class="total"> 5￥ </td>
+						<td><a href = "javascript:" id = ${i} > 删除 </a></td>
+					</tr>
+					
+					<tr>
+						<td> <input type = "checkbox" name = "choose" class="checkbox"> </td>
+						<td>
+							<img src = "./img/01.jpg" alt = ""> 
+							<p>牛奶</p>
+						</td>
+						<td class="unitPrice"> 5￥ </td>
+						
+						<td>
+						<div class="count-c clearfix">
+							<input type = "button" value ="+" class = "add">
+							<input type = "text" value ="1" class = "num">  <!-- readonly 只可读 -->
+							<input type = "button" value ="-" class = "plus" disabled>
+						</div>
+						</td>
+						
+						<td class="total"> 5￥ </td>
+						<td><a href = "javascript:" id = ${i} > 删除 </a></td>
+					</tr>
+					
+				</tbody>		
+			</table>
+			
+			<div class="checking">
+				<a href ="#" alt ="老子还没放链接呢"  class="deleteAll">删除所选</a>
+				<a href ="#" alt ="老子还没放链接呢">清空购物车</a>
+				<a href ="#" alt ="老子还没放链接呢" class ="check">去结算</a>
+				<p class = "checkShow">已选中 <span>0</span> 件商品；总价为<span>000</span>元 </p>						
+			</div>
+			
+			
+		</div>
+		
+		<script>
+		//任务1：点击加减按钮，增加商品数量，由单价*数量 = 小计；
+		let num = document.querySelectorAll(".num");
+		let add = document.querySelectorAll(".add");
+		let plus = document.querySelectorAll(".plus");
+		
+		//单价
+		let unitPrice = document.querySelectorAll(".unitPrice");
+		let total = document.querySelectorAll(".total");
+		
+		
+		/***** 商品数量加减法 
+				小计的加减法   
+		*******/
+		// console.log(num[1].value);
+		
+		
+		for(let i = 0; i < num.length; i++){
+			add[i].addEventListener('click',function(){
+				num[i].value = +num[i].value + 1;
+				plus[i].disabled = false;
+				total[i].value = parseInt(unitPrice[i].value) * num[i].value;
+				total[i].innerHTML = `${total[i].value}￥`;
+			})
+		}
+		
+		for(let i = 0; i < num.length; i++){
+			plus[i].addEventListener('click',function(){
+				num[i].value = +num[i].value - 1;
+				if( num[i].value == 1){
+					plus[i].disabled = true;
+				}
+			})
+		}
+		/*******  *************/
+		
+		
+		
+		
+		
+		
+		//任务2：全选框逻辑 弄清除，全选不选错
+		//任务3：选择的 计入下方框框，全部小计累加，
+		//任务4: 点击去结算，弹出 （总价格，支付方式（扩展）等等）
+		//任务5： 删除单项 ； 删除所选 ；清空购物车（ 比较复杂）
+		
+		
+		
+		
+		
+		
+		</script>
+		
+		
+	</body>
+</html>

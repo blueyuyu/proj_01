@@ -1,0 +1,45 @@
+@charset "utf-8"
+
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+
+body{
+	background-color: #e4f336;
+	color: #004666;
+}
+
+table,
+tr,th,td{
+	border: 3px solid #EEEEEE;
+	
+}
+
+table{
+	margin: 0 auto;
+	width: 750px;
+	border-collapse:collapse;
+	
+}
+
+caption{
+	margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+th
+{
+	height:30px;
+    background-color:#5c5c5c;
+    color:white;
+}
+
+td{
+	height: 20px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
